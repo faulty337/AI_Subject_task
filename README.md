@@ -19,7 +19,7 @@
   sensor.plot('time', 'sleep_time', 'sleep')
   ```
 
-- ![image-20191215141922693](.\images\image-20191215141922693.png)
+- ![image-20191215141922693](./images/image-20191215141922693.png)
 
   - 먼저 그래프로 봤을때 밑에 time은 수면 상태에 대한 시간, sleep_time의 경우 잠든 시간으로 잠든 시간에 따라 시간에 대한 수명상태가 달라짐을 확인할 수 있습니다.
 
@@ -27,7 +27,7 @@
 
 - 먼저 학습할려고 하는 데이터를 불러옵니다.
 
-  ![image-20191215143217179](.\images\image-20191215143217179.png)
+  ![image-20191215143217179](./images/image-20191215143217179.png)
 
 ```python
 from ai import from_sensor_code as code
@@ -37,7 +37,7 @@ sensor.read('sleepdata_v2.csv')
 sensor.show()
 ```
 
-![image-20191215143407545](.\images\image-20191215143407545.png)
+![image-20191215143407545](./images/image-20191215143407545.png)
 
 ### 인공지능 알고리즘 활용 학습 및 예측
 
@@ -47,7 +47,7 @@ sensor.show()
   sensor.run_svm(["time", "sleep_time"], "sleep")
   ```
 
-  ![image-20191215144134540](.\images\image-20191215144134540.png)
+  ![image-20191215144134540](./images/image-20191215144134540.png)
 
 - SVM의 경우 정확도는 73퍼 정도의 평균을 보여준다.
 
@@ -57,7 +57,7 @@ sensor.show()
   sensor.run_logistic_regression(["time", "sleep_time"], "sleep")
   ```
 
-  ![image-20191215144341908](.\images\image-20191215144341908.png)
+  ![image-20191215144341908](./images/image-20191215144341908.png)
 
 - 논리 회귀의 경우 58퍼 정도의 낮은 정확도를 보여준다.
 
@@ -67,7 +67,7 @@ sensor.show()
   sensor.run_decision_tree_classifier(["time", "sleep_time"], "sleep")
   ```
 
-  ![image-20191215144512717](.\images\image-20191215144512717.png)
+  ![image-20191215144512717](./images/image-20191215144512717.png)
 
 - 결정트리의 경우 평균 60점대 후반대로 나쁘지는 않지만 SVM보다는 우리 데이터에 잘 맞지 않음을 알 수 있다.
 
@@ -80,7 +80,7 @@ sensor.show()
       sensor.run_neighbor_classifier(["time", "sleep_time"], "sleep", a)
   ```
 
-  ![image-20191215145115424](.\images\image-20191215145115424.png)
+  ![image-20191215145115424](./images/image-20191215145115424.png)
 
 - 근접 이웃의 경우 이웃된 값을 1개를 제외한 나머지 의 경우 SVM 알고리즘의 정확도와 거의 비슷한걸 알 수 있다.
 
@@ -91,8 +91,8 @@ sensor.show()
   sensor.draw_4_accuracy()
   ```
 
-  ![image-20191215145516829](.\images\image-20191215145516829.png)
+  ![image-20191215145516829](./images/image-20191215145516829.png)
 
-  ![image-20191215150003197](.\images\image-20191215150003197.png)
+  ![image-20191215150003197](./images/image-20191215150003197.png)
 
 - 위에 있는 모든 알고리즘을 전부 돌린 결과 논리회귀와 결정 트리 알고리즘의 경우 근접 이웃과 SVM보다낮은 정확도를 보여준다.
